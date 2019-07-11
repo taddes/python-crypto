@@ -1,0 +1,6 @@
+-----------
+Hacking caeser cipher with brute force
+===========
+
+- Use of every possible decryption key to crack a cipher. Effective on rather simple encryptions, harder on more complex.
+- Augustine Kerckhoff (19th-C cryptographer): "A cipher should be secure even if everyone knows how the cipher works."
