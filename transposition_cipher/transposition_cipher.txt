@@ -1,0 +1,14 @@
+____________
+Transposition Cipher
+____________
+
+- Number of possible keys depends on the message's length
+- Types:
+        - Rail Fence Cipher
+        - Route Cipher
+        - Myszkowski Transposition Cipher
+        - Disrupted Transposition Cipher
+        - Columnar Transposition Cipher
+
+- Transposition cipher rearranges the message symbols into an order that makes the original message unreadable.
+- Each key creates a different ordering/permutation of the characters

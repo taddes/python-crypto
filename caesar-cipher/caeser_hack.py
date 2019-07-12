@@ -11,7 +11,6 @@ def crack_caesar(message, symbols):
 # Iterate through all possible keys
     for key in range(len(SYMBOLS)):
         # Important is to set translated to the blank string so that the previous interation value for translation is cleared
-
         translated = ''
         for symbol in message:
             if symbol in SYMBOLS:
