@@ -29,7 +29,8 @@ def encrypt_message(key, message):
             print(ciphertext)
             # Move current_index over by adding key value
             current_index += key
-
+    
+    return ''.join(ciphertext)
 
 
 if __name__ == '__main__':
