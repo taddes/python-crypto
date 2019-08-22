@@ -1,8 +1,8 @@
 import math, pyperclip
 
 def main():
-    my_message = 'Cenoonommstmme oo snnio. s s c'
-    my_key = 8
+    my_message = 'Tn, thoo tie tthorb henfeta ,u otq co  umkrbieo! esst'
+    my_key = 9
 
     plaintext = decrypt_message(my_key, my_message)
 

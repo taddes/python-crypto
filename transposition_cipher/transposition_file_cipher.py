@@ -3,13 +3,13 @@
 import time, os, sys, transposition_encrypt, transposition_decrypt
 
 def main():
-    input_filename = 'frankenstein.txt'
+    input_filename = 'war-and-peace.txt'
     # input_filename = 'frankenstein.encrypted.txt'
-    output_filename = 'frankenstein.encrypted.txt'
-    # output_filename = 'frankenstein.decrypted.txt'
-    my_key = 10
-    my_mode = 'encrypt'
+    # output_filename = 'war-and-peace.encrypted.txt'
+    output_filename = 'war-and-peace.encrypted.txt'
+    my_key = 666
     # my_mode = 'decrypt'
+    my_mode = 'encrypt'
 
     # If input does not exist, exit program
     if not os.path.exists(input_filename):
@@ -28,7 +28,7 @@ def main():
     content = file_obj.read()
     file_obj.close()
 
-    print(f'Closing {input_filename.title()}')
+    print(f'Opening {input_filename.title()}')
 
     # Initiate and Measure how long the encrpytion/decryption takes
     starttime = time.time()

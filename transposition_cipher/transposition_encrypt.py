@@ -1,8 +1,8 @@
 import pyperclip
 
 def main():
-    my_message = 'Common sense is not so common.'
-    my_key = 8
+    my_message = 'To be or not to be, that is the question, motherfuck!'
+    my_key = 9
 
     ciphertext = encrypt_message(my_key, my_message)
     # Print encrypted ciphertext to screen with a | ('pipe') delimeter to indicate end of message
