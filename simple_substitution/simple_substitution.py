@@ -22,7 +22,7 @@ def main():
     my_mode = 'encrypt'
     # my_mode = 'decrypt'
 
-    if key_is_valid(my_key):
+    if not key_is_valid(my_key):
         sys.exit('There is an error in the key or symbol set.')
     if my_mode == 'encrypt':
         translated = encrypt_message(my_key, my_message)
@@ -42,7 +42,7 @@ def key_is_valid(key):
     letters_list = list(LETTERS)
     key_list.sort()
     letters_list.sort()
-
+    print(str(key_list == letters_list))
     return key_list == letters_list
 
 
@@ -56,7 +56,33 @@ def decrypt_message(key, message):
 
 def translate_message(key, message, mode):
     translated = ''
-    
+    chars_a = LETTERS
+    chars_b = key
+    if mode == 'decrypt':
+        # For decrypting, we use the same code as encrpyting.
+        # Just need to swap where the key and LETTERs strings used.
+        chars_a, chars_b = chars_b, chars_a
+
+    # Iterate through each symbol in message
+    for symbol in message:
+        if symbol.upper() in chars_a:
+            # encrypt/decrypt symbol
+            sym_index = chars_a.find(symbol.upper())
+            if symbol.isupper():
+                translated += chars_b[sym_index].upper()
+            else:
+                translated += chars_b[sym_index].lower()
+        else:
+            # Symbol is not in LETTERS, just add it
+            translated += symbol
+
+    return translated
+
+
+def get_random_key():
+    key = list(LETTERS)
+    random.shuffle(key)
+    return ''.join(key)
 
 
 if __name__ == '__main__':

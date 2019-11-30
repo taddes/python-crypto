@@ -7,7 +7,7 @@ def main():
     # input_filename = 'frankenstein.encrypted.txt'
     # output_filename = 'war-and-peace.encrypted.txt'
     output_filename = 'war-and-peace.encrypted.txt'
-    my_key = 666
+    my_key = 234
     # my_mode = 'decrypt'
     my_mode = 'encrypt'
 

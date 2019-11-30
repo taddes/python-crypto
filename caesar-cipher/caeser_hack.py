@@ -3,7 +3,7 @@ Implementation of how to hack the Caeser Cipher with brute force
 """
 import timeit
 
-message = 'guv6Jv6Jz!J6rp5r7Jzr66ntrM'
+message = 'QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD LC ZXBPXO XKA VLRO RKFNRB PLIRQFLK FP DZMODJKJBOIK'
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
 
 
