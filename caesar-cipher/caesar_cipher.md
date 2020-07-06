@@ -26,8 +26,24 @@
 
 ## Effectiveness & Problems
 * Keyspace is small, only 26 keys! Very weak encryption.
+* Information leaking, due to the cryptosystem revealing information about both the recurrance of numbers/letters and their distribution. To remedy this, you'd have to use random numbers via *OTP - One Time Pads*.
 * Repetitive iterations of encryption will not strengthen encryption. An encryption of 2 follwed by an encryption of 3 is only an encryption of 5. Any additional encrpyptions are simply additive to key. 
-* Can be easily brute forced
-    * Use of every possible decryption key to crack a cipher. Effective on rather simple encryptions, harder on more complex.
-* Can be easily broken using frequency analysis (recurrance of common letters, E, A, O, I, T)
+
+### Brute Force
+* Can be easily *brute forced*
+    * Use of every possible decryption key to crack a cipher. Effective on rather simple encryptions, harder on more complex ciphertext. 
+    * Brute force best when keyspace is small.
+
+### Frequency Analysis
+* Can be easily broken using *frequency analysis* (recurrance of common letters, E, A, O, I, T)
+    * Analyze the frequency distribution of letters in the ciphertext.
+    * key = value of ciphertext's most frequent letter (E).
+    * Shifting the key alters the letters, but not the distribution/recurrance of letters.
     * Augustine Kerckhoff (19th-C cryptographer): *"A cipher should be secure even if everyone knows how the cipher works."*
+
+1. Calculate the relative frequency distribution of ciphertext letters.
+2. Get the most frequent letter in the ciphertext (or second, because the most frequent may be whitespace).
+3. Intuit key from distribution.
+
+
+
