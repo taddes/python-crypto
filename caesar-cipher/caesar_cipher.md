@@ -15,13 +15,14 @@
 ### Encryption
 **En(x) = (x+n) mod 26**
 * Where En(x) is the encrypted letter of the original x letter
-* Where x + n is the numeric index of the letter, plus the key shift value (Range [0,SIZE_ALPHABET])
+* Where x + n is the numeric index of the letter, plus the key shift value (Range [0,SIZE_ALPHABET - 1])
 * Mod % used to match the length of the character set (0-25 is 26)
 
 ### Decryption
 **Dn(x) = (x-n) mod 26**
 * Where Dn(x) is the decrypted letter of the original x ciphertext.
-* Have to shift the given letter with -n (where n is the key)
+* Have to shift the given letter with -n (where n is the key) 
+* Range [0,SIZE_ALPHABET - 1])
 
 ## Effectiveness
 * Can be easily brute forced: 
