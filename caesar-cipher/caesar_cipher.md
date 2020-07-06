@@ -24,7 +24,10 @@
 * Have to shift the given letter with -n (where n is the key) 
 * Range [0,SIZE_ALPHABET - 1])
 
-## Effectiveness
-* Can be easily brute forced: 
+## Effectiveness & Problems
+* Keyspace is small, only 26 keys! Very weak encryption.
+* Repetitive iterations of encryption will not strengthen encryption. An encryption of 2 follwed by an encryption of 3 is only an encryption of 5. Any additional encrpyptions are simply additive to key. 
+* Can be easily brute forced
     * Use of every possible decryption key to crack a cipher. Effective on rather simple encryptions, harder on more complex.
+* Can be easily broken using frequency analysis (recurrance of common letters, E, A, O, I, T)
     * Augustine Kerckhoff (19th-C cryptographer): *"A cipher should be secure even if everyone knows how the cipher works."*
