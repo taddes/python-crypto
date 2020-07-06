@@ -4,10 +4,17 @@
 * A form of simple *substitution cipher*.
 * Each single letter in plaintext is shifted by the same key (rotation).
 * The key itself is the number of letters we use for shifting.
-* Have to consider wraparound, once you go past 26 characters of the alphabet.
+* Have to consider wraparound, once you go past 26 characters of the alphabet (0-25) or 256 ASCII characters!
 
 ## Process
-* Assign numerical values to every letter in the alphabet to be able to use mathematical operations during encryption/decryption
+* Assign numerical values to every letter in the alphabet to be able to use mathematical operations during encryption/decryption.
+* Shift the letters by the numeric key, corresponding to the character set (taking into account wrap around).
+
+## Formula
+**En(x) = (x+n) mod 26**
+Where En(x) is the encrypted letter of the original x letter
+Where x + n is the numeric index of the letter, plus the key shift value
+Mod % used to match the length of the character set (0-25 is 26)
 
 
 * Can be easily brute forced: 
