@@ -1,3 +1,4 @@
+"""Implementation of Caeser Cipher"""
 # Note that whitespace is included in alphabet string
 ALPHABET = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 KEY = 3
@@ -33,4 +34,3 @@ if __name__ == '__main__':
     print(f'Encrypted: {encrypted}')
     decrypted = caesar_decrypt(encrypted, 12)
     print(f'Decrypted: {decrypted}')
-    
