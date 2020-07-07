@@ -10,5 +10,19 @@
 * A 16th Century Cipher considered to be unbreakable in its day.
 
 ## Implementation
+* Similar formula to that of Caesar Cipher.
+* Overlay the recurring multi-letter key and its numerical index over each plaintext/ciphertext letter and then +/- the key.
 
+### Encryption
+**Ei(xi) = (xi + Ki) mod 26 (or alphanum len)**
+* xi is the actual letter in plaintext
+* Ei(xi) is the encrypted letter in the ciphertext
+* The i-th letter of the key must be used for encrypting the i-th letter. In other words, in a key composed of many indexes of letters, each key index should be successively used.
+* Modulo must again be used to get remainder if wraparound occurs.
+
+### Decryption
+**Di(xi) = (xi - Ki) mod 26 (or alphanum len)**
+* xi is the actual letter in ciphertext
+* Di(xi) is the decrypted letter in the ciphertext
+* The i-th letter of the key must be used for decrypting the i-th letter. In other words, in a key composed of many indexes of letters, each key index should be successively used.
 
