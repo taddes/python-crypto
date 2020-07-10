@@ -26,3 +26,15 @@
 * Di(xi) is the decrypted letter in the ciphertext
 * The i-th letter of the key must be used for decrypting the i-th letter. In other words, in a key composed of many indexes of letters, each key index should be successively used.
 
+## Cracking the Vigenere Cipher
+* Cracking Vigenere is challenging, because the complexity of cracking a cipher is proportional to the size of the keyspace. (Alphabet/Charset to power of the key length == 26^6 = 26,000,000)
+* Can use a Dictionary Attack, but this would be an equally inefficient *Brute force attack*
+
+* Best solution is **Kasiski-algorithm**
+    * Constructed by Friedrich Kasiski in 1863, also discovered by Charles Babbage. 
+    * If the key size is known, then frequency analysis can be applied to decrypt the ciphertext.
+
+  ### Kasiski Implementaiton
+  1. Find the key size: can analyze repeated substrings and their factors to get a good guess.
+  2. Construct substrings from teh ciphertext that are encrypted by the same letters.
+  3. Use frequency analysis to find the letters of the key.
