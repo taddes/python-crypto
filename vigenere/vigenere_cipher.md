@@ -33,8 +33,15 @@
 * Best solution is **Kasiski-algorithm**
     * Constructed by Friedrich Kasiski in 1863, also discovered by Charles Babbage. 
     * If the key size is known, then frequency analysis can be applied to decrypt the ciphertext.
+    * Takes advantage of some information leakage.
+    * Example of *suffix tree* data structure to determine repeated substrings.
 
   ### Kasiski Implementaiton
   1. Find the key size: can analyze repeated substrings and their factors to get a good guess.
-  2. Construct substrings from teh ciphertext that are encrypted by the same letters.
+  2. Construct substrings from the ciphertext that are encrypted by the same letters.
   3. Use frequency analysis to find the letters of the key.
+
+  * Size of the substrings should be at least 3 letters long.
+  * Repeat instances of substrings mean the key and plaintext line up; same letter is possibly encrypted by the same key letters. *this also happens by accident, because the key and a different letter can result in the same ciphertext*
+
+
