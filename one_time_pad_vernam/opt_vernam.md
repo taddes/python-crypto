@@ -4,6 +4,13 @@
 * First constructed by Frank Miller in 1882.
 
 ### XOR
+| X | Y | X XOR Y |
+|---|---|---------|
+| 0 | 0 |    0    |
+| 0 | 1 |    1    |
+| 1 | 0 |    1    |
+| 1 | 1 |    0    |
+
 * One Time Pad (OTP) uses XOR bitwise operation; it is an involution so that the function's inverse is the function itself.
 * This operation shifts every letter in the plaintext in an additive manner, whcih is the same as bitwise XOR (if there are no carry bits)
 
