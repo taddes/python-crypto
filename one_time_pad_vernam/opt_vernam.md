@@ -70,5 +70,8 @@ Sequence is: 310610210
 ```
 #### Linear Congruential Generator
 **x n+1 = (a Xn + c) mod m**
+* Values of the parameters a, c and m determine the period.
+* Define a seed which is X0
+
 
 
