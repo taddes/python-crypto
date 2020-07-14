@@ -29,15 +29,25 @@
 ### Random Numbers vs Pseudo-Random Numbers
 * The main problem as far as the one time pad is concerned is how to generate truly random numbers.
 * *Random number generation is the generation of a sequence of numbers that cannot be reasonably predicted in any way, other than by random chance.*
-* True randomness:
+#### True randomness:
     * Radioactive decay, mouse movement, atomspheric noice.
     * Values have uniform distribution
     * Values are independent of each other
     * Not efficient: expensive to generate
-* Pseudo-randomness:    
+#### Pseudo-randomness:    
     * Computers are deterministic and can repeat themselves; it is difficlut/impossible to define algorithms to generate true random numbers.
     * For example, you can use middle-square method, Marsenne twister or linear congruential generators.
     * Values have a uniform distribution.
     * Values are not independent of each other.
     * THere are efficient algorithms that generate pseudo-random values.
+
+#### Middle Square Method
+* Input of the algorithm is a **seed**, the starting point that determines a pseudo-random sequence.  This seed *is the input of a simple calculation*, like the measurement of noise or current time in milliseconds.
+* Randomness of the sequence depends on the randomness of the seed.
+* Invented by John von Neumann in 1949.
+
+
+1. Multiply the seed by itself.
+2. Get the middle of the result.
+3. The result is the seed in the next iteration.
 
