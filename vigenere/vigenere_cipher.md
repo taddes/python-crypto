@@ -7,7 +7,7 @@
     * Ex. S  E C  R E  T
       18 4 2 17 4 19
       **Assuming 26 Char alphabet: 26^6 = *26,000,000***
-* A 16th Century Cipher considered to be unbreakable in its day.
+* A 16th Century Cipher considered to be unbreakable in its day. Described by Giovan Battista Bellasio in 1553, but named after Blaise de Vigenere who dubbed it "The indecipherable cipher." It remained so until it was broken by Charles Babbage in the 19th Centruy.
 
 ## Implementation
 * Similar formula to that of Caesar Cipher.

@@ -30,24 +30,45 @@
 * The main problem as far as the one time pad is concerned is how to generate truly random numbers.
 * *Random number generation is the generation of a sequence of numbers that cannot be reasonably predicted in any way, other than by random chance.*
 #### True randomness:
-    * Radioactive decay, mouse movement, atomspheric noice.
-    * Values have uniform distribution
-    * Values are independent of each other
-    * Not efficient: expensive to generate
+* Radioactive decay, mouse movement, atomspheric noice.
+* Values have uniform distribution
+* Values are independent of each other
+* Not efficient: expensive to generate
 #### Pseudo-randomness:    
-    * Computers are deterministic and can repeat themselves; it is difficlut/impossible to define algorithms to generate true random numbers.
-    * For example, you can use middle-square method, Marsenne twister or linear congruential generators.
-    * Values have a uniform distribution.
-    * Values are not independent of each other.
-    * THere are efficient algorithms that generate pseudo-random values.
+* Computers are deterministic and can repeat themselves; it is difficlut/impossible to define algorithms to generate true random numbers.
+* For example, you can use middle-square method, Marsenne twister or linear congruential generators.
+* Values have a uniform distribution.
+* Values are not independent of each other.
+* There are efficient algorithms that generate pseudo-random values.
 
 #### Middle Square Method
 * Input of the algorithm is a **seed**, the starting point that determines a pseudo-random sequence.  This seed *is the input of a simple calculation*, like the measurement of noise or current time in milliseconds.
-* Randomness of the sequence depends on the randomness of the seed.
+* Randomness of the sequence depends on the randomness of the seed.  If initial state is random, sequence is random. If initial state is predictable, the sequence is predictable.
+* If the algorithm reaches a seed it previously used, then the sequence will keep repeating itself. This is called a **period**, the length of a pseudo-random sequence before it repeats itself.  The period depends on the initial seed exclusively. **N digits seed: algorithm uses 10^N digits before reusing seed**.
+    * 2 digit seed: algorithm uses at most 100 digits before reusing seed.
+    * 3 digit seed: algorithm uses at most 1000 digits before reusing seed.
+* If the key-space is reduced to a much smaller one by the period/seed-space, meaning the one time pad is less secure
 * Invented by John von Neumann in 1949.
-
 
 1. Multiply the seed by itself.
 2. Get the middle of the result.
 3. The result is the seed in the next iteration.
+
+```
+Ex. seed = 152
+152 x 152 = 23104
+
+seed = 310
+310x310 = 96100
+
+seed = 610
+610x610 = 372100
+
+seed = 210
+210x210 
+Sequence is: 310610210
+```
+#### Linear Congruential Generator
+**x n+1 = (a Xn + c) mod m**
+
 
