@@ -30,7 +30,15 @@ def random_sequence(plain_text):
     rand_seq = []
     # Generate as many random values as the number of chars in the plain_text
     # size of the key == size of the plain_text
-    for rand in range(len(plain_text)):
+    for _ in range(len(plain_text)):
         rand_seq.append(randint(0, len(ALPHABET)))
 
     return rand_seq
+
+if __name__ == "__main__":
+    plain_text = """Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."""
+    key = random_sequence(plain_text)
+    cipher_text = encrypt(plain_text, key)
+    print(cipher_text)
+    decrypted_text = decrypt(cipher_text, key)
+    print(decrypted_text)
