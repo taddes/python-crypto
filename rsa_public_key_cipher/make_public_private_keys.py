@@ -43,6 +43,8 @@ def generate_key(keysize):
     private_key = (n, d)
 
     return (public_key, private_key)
+
+
 def make_key_files(name, keysize):
     """
     Creates two files "x_pubkey.txt" and "x_privkey.txt" (where x
@@ -53,6 +55,8 @@ def make_key_files(name, keysize):
         sys.exit('''WARNING: The public/private key already exists. Use a different 
         name or delete these files to rerun the program''')
 
+    public_key, private_key = generate_key(keysize)
+    
 
 
 if __name__ == '__main__':
