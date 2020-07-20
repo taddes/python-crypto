@@ -12,6 +12,7 @@ def main():
         Create a private/public key pai with 1024-bit keys
     """
     print('Generating keys')
+    make_key_files('taddes', 1024)
     
 def generate_key(keysize):
     """Creates public/private keys"""
@@ -42,6 +43,9 @@ def generate_key(keysize):
     public_key = (n, e)
     private_key = (n, d)
 
+    print(f'Public Key: {public_key}')
+    print(f'Private Key: {private_key}')
+
     return (public_key, private_key)
 
 
@@ -56,7 +60,25 @@ def make_key_files(name, keysize):
         name or delete these files to rerun the program''')
 
     public_key, private_key = generate_key(keysize)
-    
+
+    print(f'Public Key: {public_key}')
+    print(f'Private Key: {private_key}')
+
+    print(f'The public key is a {len(str(public_key[0]))} and a {len(str(public_key[1]))} digit number')
+    print()
+    print(f'Writing public key to file {name}_pubkey.txt')
+    fo = open(f'{name}_pubkey.txt', 'w')
+    fo.write(f'{keysize, public_key[0], public_key[1]}')
+    fo.close()
+
+    print(f'The public key is a {len(str(private_key[0]))} and a {len(str(private_key[1]))} digit number')
+    print()
+    print(f'Writing private key to file {name}_privkey.txt')
+    fo = open(f'{name}_privkey.txt', 'w')
+    fo.write(f'{keysize, private_key[0], private_key[1]}')
+    fo.close()
+
+
 
 
 if __name__ == '__main__':

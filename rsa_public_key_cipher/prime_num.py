@@ -45,6 +45,56 @@ def prime_sieve(sieve_size):
 
 def rabin_miller(num):
     """Rabin-Miller Algorithm"""
+    # Doesn't work on even integers
     if num % 2 == 0 or num < 2:
         return False
+    if num == 3:
+        return True
     
+    s = num - 1
+    t = 0
+
+    while s % 2 == 0:
+        # Keep halving s until it is odd (and use t to 
+        # count how many times we halve)
+        s = s // 2
+        t += 1
+    for trials in range(5):
+        # Try to falsify num's primality 5 times.
+        a = random.randrange(2, num - 1)
+        v = pow(a, s, num)
+        if v != 1:
+            i = 0
+            while v != (num - 1):
+                if i == t - 1:
+                    return False
+                else:
+                    i = i + 1
+                    v = (v ** 2) % num
+    return True
+
+LOW_PRIMES = prime_sieve(100)
+
+def is_prime(num):
+    """
+        Return True if num is a prime number. This function does a quicker prime
+        number chekc before calling rabin_miller()
+    """
+    if num < 2:
+        return False
+    
+    # See if any of the low prime numbers can divide num
+    for prime in LOW_PRIMES:
+        if (num % prime == 0):
+            return False
+
+    # If all else fails, call rabin_miller() to determine if num is prime
+    return rabin_miller(num)
+
+
+def generate_large_prime_number(keysize=1024):
+    """Return a large prime number that is keysize bits in size"""
+    while True:
+        num = random.randrange(2**(keysize - 1), 2**(keysize))
+        if is_prime(num):
+            return num
