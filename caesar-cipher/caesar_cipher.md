@@ -45,5 +45,9 @@
 2. Get the most frequent letter in the ciphertext (or second, because the most frequent may be whitespace).
 3. Intuit key from distribution.
 
+### Dictionary
+* Useful to detect whether a decrypted file contains many actual words in a dictionary.
+
+
 
 
