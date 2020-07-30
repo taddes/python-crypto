@@ -16,3 +16,7 @@ Key Size: 64-bits (56-bits relevant used in algorithm)
 Rounds: 16
 Subkeys: 16; each subkey being 48-bits
 Ciphertext size: 64-bits
+
+### Circular Shift (Bitwise Rotation)
+* Operator that shifts all the bits, either right or left. A shift of `0100100` to the left results in: `10010000`
+* In DES, we sometimes have to shift by 1 and sometimes by 2.
