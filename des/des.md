@@ -45,3 +45,7 @@ Ciphertext size: 64-bits
 * Key to breaking DES is breaking the S-Box. To determine the values within the s-boxes, we look for information leakage that points to non-random behavior in a seemingly random set of numbers within the S-Box. The S-Box implementation output is similar to true random numbers created by the S-Box.  
 * Linear Crypto. needs N plaintext / ciphertext pairs. One needs 2^47 known plaintexts, so this approach is not practical when cracking DES. 
 * Some have speculated that a backdoor was planted with DES due to NSA interference with Horst Feistel's work. Even a small modification could weaken DES
+
+### Differential Cryptoanalysis
+* Seeks to determine possible information leakage due to non-random behavior.
+* Requires N plaintext/ ciphertext pairs. Approach aims to map bitwise X differences in the input (plaintext) to Y differences in the output (ciphertext). **What happens to the output as you change one bit in the input?**
