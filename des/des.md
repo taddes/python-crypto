@@ -31,3 +31,8 @@ Ciphertext size: 64-bits
 
 ### Decryption
 * Same function with encryption, except that subkeys are used in reverse order: **start with the last (16th subkey)**. Subkeys can be generated with circular left shift operations. Usually in the implementation we generate all 16 subkeys at the start.
+
+## Breaking DES
+* Primary weakness: DES keyspace is 2^56, which makes it susceptible to Brute Force cracking.
+* *DeepCrack* managed to crack DES within 22 hours. It does not use any internal structure of the cryptosystem, it just considered all the possible keys using linear search.
+* Due to this vulnerability, DES was replaced by 3Des or Triple Des, followed by AES. 3DES uses 3 rounds, so 3 private keys, 3x16 = 48 rounds, therefore a much larger key space.
