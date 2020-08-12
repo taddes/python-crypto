@@ -33,6 +33,15 @@ Ciphertext size: 64-bits
 * Same function with encryption, except that subkeys are used in reverse order: **start with the last (16th subkey)**. Subkeys can be generated with circular left shift operations. Usually in the implementation we generate all 16 subkeys at the start.
 
 ## Breaking DES
+### Why DES is vulnerable
 * Primary weakness: DES keyspace is 2^56, which makes it susceptible to Brute Force cracking.
 * *DeepCrack* managed to crack DES within 22 hours. It does not use any internal structure of the cryptosystem, it just considered all the possible keys using linear search.
 * Due to this vulnerability, DES was replaced by 3Des or Triple Des, followed by AES. 3DES uses 3 rounds, so 3 private keys, 3x16 = 48 rounds, therefore a much larger key space.
+
+### Linear Cryptoanalysis
+* A widely used attack on block ciphers. Invented by Mitsuru Matsui in 1992.
+* Approach assumes a linear relationship between the elements (individual bits) of the plaintext, ciphertext and key. You try to find `f` linear approximation such that `ciphertext = f(plaintext, key)`
+* DES cryposystem uses linear transformations throughout the encryption process, except for the S-Box. The S-Box transforms 6-bits to 4-bits, and is therefore non-linear. 
+* Key to breaking DES is breaking the S-Box. To determine the values within the s-boxes, we look for information leakage that points to non-random behavior in a seemingly random set of numbers within the S-Box. The S-Box implementation output is similar to true random numbers created by the S-Box.  
+* Linear Crypto. needs N plaintext / ciphertext pairs. One needs 2^47 known plaintexts, so this approach is not practical when cracking DES. 
+* Some have speculated that a backdoor was planted with DES due to NSA interference with Horst Feistel's work. Even a small modification could weaken DES
