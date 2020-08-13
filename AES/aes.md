@@ -55,3 +55,9 @@
   | S10 | S14 | S2  | S6  |
   | S15 | S3  | S7  | S11 |
 
+5. Mix Columns Operation - Matrix Vector Multiplication
+* Take the columns from the state-matrix and multiply the predifined matrix with these vectors. Result is referred to the **Galois-field**
+* Addition is the XOR operation
+* Multiplication of a binary sequence by 3 is approximately the left shift binary operation.
+
+
