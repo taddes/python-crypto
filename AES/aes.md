@@ -37,7 +37,6 @@
 4. Shift Rows Operation (Circular Left Shift)
 
 | S0 | S4 | S8  | S12 |
-|----|----|-----|-----|
 | S1 | S5 | S9  | S13 |
 | S2 | S6 | S10 | S14 |
 | S3 | S7 | S11 | S15 |
@@ -50,7 +49,6 @@
 
   Result: 
   | S0  | S4  | S8  | S12 |
-  |-----|-----|-----|-----|
   | S5  | S9  | S13 | S1  |
   | S10 | S14 | S2  | S6  |
   | S15 | S3  | S7  | S11 |
@@ -60,4 +58,9 @@
 * Addition is the XOR operation
 * Multiplication of a binary sequence by 3 is approximately the left shift binary operation.
 
+Pre-defined Matrix
+| 2 | 3 | 1 | 1 |
+| 1 | 2 | 3 | 1 |
+| 1 | 1 | 2 | 3 |
+| 3 | 1 | 1 | 2 |
 
