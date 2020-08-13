@@ -17,7 +17,10 @@
 * Data in matrix handled in a column by column basis. Count up from leftmost, top column.
 
 ### Algorithm
-1. Input 128-bit plaintext block & 128-bit key.
+1. Input 128-bit plaintext block & 128-bit private key.
+  * Subkey Generation:
+  * Rotation operation which means binary shift left, but in this case we shift every byte up  one step in a circular manner. Then use S-box for each byte (4-bit row index, 4-bit col index)
+  * Use XOR operation with previous words in teh key and the values in the rcon table (round constant table), which is a lookup table.
 2. Add Round Key Operation:
     * XOR bitwise operation between key and plaintext 
     * **NOTE**: because XOR has a 50% probability of being 1 or 0, it is close to random, hence it is strong! More options would not necessarily be better, due to pseudo-random generation possibly making detectable patterns.
@@ -66,4 +69,15 @@ Pre-defined Matrix
 | 1 | 2 | 3 | 1 |
 | 1 | 1 | 2 | 3 |
 | 3 | 1 | 1 | 2 |
+
+6. Mix Columns
+**NOTE: This operation is not done in the last round of rounding.**
+
+7. Add Round Key
+**EACH ROUND GETS ITS UNIQUE SUBKEY**
+Add Round Key Operation:
+    * XOR bitwise operation between state-matrix and subkey 
+    * **NOTE**: because XOR has a 50% probability of being 1 or 0, it is close to random, hence it is strong! More options would not necessarily be better, due to pseudo-random generation possibly making detectable patterns.
+
+
 
