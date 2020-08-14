@@ -80,4 +80,9 @@ Add Round Key Operation:
     * **NOTE**: because XOR has a 50% probability of being 1 or 0, it is close to random, hence it is strong! More options would not necessarily be better, due to pseudo-random generation possibly making detectable patterns.
 
 
+### Claude Shannon's Confusion and Diffusion
+* Since AES keyspace is 2^256, it's not feasible to crack AES with brute force.
 
+Properties of a secure cipher:
+1. **Confusion**:  each binary digit of the ciphertest should depend on several digits of the private key. We want the relationship between input and output to be as complex as possible. The ciphertest should give no clue about the plaintext; this is why non-linear transformations are preferred, which destroy patterns in the plaintext (S-Boxes).
+2. **Diffusion**: if we chance a single bit in the input, then half of the digits in the output should change. There are 2 states (0 and 1), meaning a 50% of either choice, which introduces randomness. This is often referred to as the *avalanche effect*. Overall aim is to increase the redundancy of the input to obscure the statistical structure of the input so frequency analysis is not useful (Permutations).
