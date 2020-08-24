@@ -2,8 +2,6 @@
 
 ## Fundamentals
 * Strength lies in the integer factorization problem/integer factorization as a 'trapdoor' function: validating the reuslt by multiplying two numbers is quite easy, but finding the factors is hard.
-
-## Implementation
 * Requires knowledge of prime numbers, Fermat's little theorem and Euler's Phi Function.
 * Relatively prime: two integers `a` and `b` are said to be relatively prime or coprime if the only positive integer (factor) that divides both is 1. `gcd(a, b) = 1`
 * Let `p` be a prime number, then for any integer, `a`, where `a` is not divisible by `p`, the number `a^p-1` is an integer multiple of `p`. `a^p-1 is congruent to 1 (mod p)`, so the remainder is always 1. 
@@ -16,6 +14,24 @@
   * Phi(5) = 1,2,3,4 -> so the value of the function is 4
   * Phi(8) = 1,3,5,7 -> so the value of the function is 4
   * Phi(7) = 1,2,3,4,5,6 -> so the value of the function is 6
+
+## Algorithm Implementation
+### Key Generation
+1. Generate 2 large prime numbers, `p` and `q`, usually using the Rabin-Miller algorithm. Generally numbers are > 1024 bits, but it is recommended to use > 2048 bits in modern implementations.
+2. Calculate `n`, by multiplying `p` and `q` together. `n = p*q`. Using Euler's Phi Function, the result is as such: `Phi(n) = (p-1)(q-1)`
+3. Calculate the public key `e` parameter. We calculate `e`, such that `gcd(e, Phi(n))=1`, so that `e` and `Phi(n)` are relative primes, and that they share no factor other than 1.
+4. Calculate the private key `d` parameter. We calculate the modular inverse of `e`. The modular inverse of `e` is `d`. This is why it is crucial that `e` and `Phi(n)` are coprime. `d * e mod Phi(n) = 1`
+* **PUBLIC KEY: (E,N)**
+* **PRIVATE KEY: (D,N)**
+
+### Encryption
+1. Transform plaintext into blocks where each block is smaller than n.
+2. Use the public key for encryption and the private key for decryption. Typically use ASCII table to convert text to numbers.
+```
+ciphertext_block = plaintext_block^e mod n
+plaintext_block = ciphertext_block^d mod n
+```
+### Problem of Modular Inverse
 
 
 
