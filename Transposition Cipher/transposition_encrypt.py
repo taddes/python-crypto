@@ -1,7 +1,7 @@
 import pyperclip
 
 def main():
-    my_message = 'To be or not to be, that is the question, motherfuck!'
+    my_message = 'To be or not to be, that is the question, good sir!'
     my_key = 9
 
     ciphertext = encrypt_message(my_key, my_message)
